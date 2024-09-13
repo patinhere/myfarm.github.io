@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compaptible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Plant selection over 100 plants</title>
+  </head>
+  <body>
+    <div class="container align-items-center justify-content-center" id="body">
+      <div id="topNav" class="container">
+        <div id="topBar" class="row align-items-center">
+          <div class="col-3">
+            <a href="#" class="navbar-brand"
+              ><img id="logo" src="src/img/logo.png" alt="logo" />
+            </a>
+          </div>
+          <div id="searchBar" class="col-6">
+            <form
+              action="#"
+              class="form-inline"
+              name="searchForm"
+              id="searchForm"
+            >
+              <input
+                class="form"
+                type="search"
+                placeholder="     Search plant "
+                aria-label="Search"
+                id="searchText"
+                name="query"
+              />
+              <button
+                class="btn btn-outline-secondary my-2 my-sm-0"
+                id="searchButton"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+          <div class="col-3">
+            <button id="bookMarkButton" class="btn btn-secondary float-end">
+              Bookmarks
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="categoryBar">
+        <div class="row align-items-center">
+          <div class="col-1"></div>
+          <div class="col-10 marginBottom">
+            <button class="categoryButton" id="largeTreeCategory">
+              <img class="imageCategory" src="src/img/largeTree.png" />
+              <br />Large Plants
+            </button>
+            <button class="categoryButton" id="smallTreeCategory">
+              <img class="imageCategory" src="src/img/smallTree.png" />
+              <br />Small Plants
+            </button>
+            <button class="categoryButton" id="flowerCategory">
+              <img class="imageCategory" src="src/img/flower.png" />
+              <br />Flower
+            </button>
+            <button class="categoryButton" id="vineCategory">
+              <img class="imageCategory" src="src/img/vine.png" />
+              <br />Vine Plants
+            </button>
+            <button class="categoryButton" id="fastGrowPlantCategory">
+              <img class="imageCategory" src="src/img/fastGrowPlant.png" />
+              <br />Fast Grow
+            </button>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+
+  
+      <div id="mainContainer" class="container">
+        <div class="resultNumber badge fw-lighter">
+          <span id="resultList">0</span> results
+        </div><div id="main">
+            <button class="openbtn" onclick="openNav()">></button> 
+          </div>
+        <div
+          class="spinner-border text-secondary spinnerHidden"
+          role="status"
+        ></div>
+
+        <div class="row align-items-start">
+          <div
+            id="sideContainer"
+            class="col-3 btn-group-vertical sideButton"
+          >
+          
+        </div>
+          
+          
+          <div id="contentContainer" class="col-9 nav">
+            
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
