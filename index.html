@@ -20,31 +20,36 @@
     <title>Plant selection over 100 plants</title>
   </head>
   <body>
-    <div class="container align-items-center justify-content-center" id="body">
-      <div id="topNav" class="container">
-        <div id="topBar" class="row align-items-center">
-          <div class="col-3">
+    <!-- container -->
+    <div class="container align-items-center" id="body">
+
+      <!-- nav -->
+      <div id="topNav" class="container ">
+
+        <div id="topBar" class="align-items-center d-flex justify-content-between">
+          <!-- logo -->
+          <div >
             <a href="#" class="navbar-brand"
               ><img id="logo" src="src/img/logo.png" alt="logo" />
             </a>
           </div>
-          <div id="searchBar" class="col-6">
+          <!-- search -->
+          <div id="searchBar">
             <form
               action="#"
-              class="form-inline"
               name="searchForm"
               id="searchForm"
             >
               <input
                 class="form"
                 type="search"
-                placeholder="     Search plant "
+                placeholder="Search plant "
                 aria-label="Search"
                 id="searchText"
                 name="query"
               />
               <button
-                class="btn btn-outline-secondary my-2 my-sm-0"
+                class="btn btn-outline-secondary"
                 id="searchButton"
                 type="submit"
               >
@@ -52,18 +57,14 @@
               </button>
             </form>
           </div>
-          <div class="col-3">
-            <button id="bookMarkButton" class="btn btn-secondary float-end">
-              Bookmarks
-            </button>
-          </div>
         </div>
       </div>
 
+      <!-- category -->
       <div class="container" id="categoryBar">
-        <div class="row align-items-center">
-          <div class="col-1"></div>
-          <div class="col-10 marginBottom">
+        <hr class="mt-0" />
+            <!-- category button -->
+            <div class="align-items-center d-flex justify-content-around flex-wrap mb-5">
             <button class="categoryButton" id="largeTreeCategory">
               <img class="imageCategory" src="src/img/largeTree.png" />
               <br />Large Plants
@@ -85,36 +86,42 @@
               <br />Fast Grow
             </button>
           </div>
-          <div class="col-1"></div>
-        </div>
+        
       </div>
 
-  
+      <!-- content -->
       <div id="mainContainer" class="container">
+
+        <!-- result number -->
         <div class="resultNumber badge fw-lighter">
           <span id="resultList">0</span> results
-        </div><div id="main">
+        </div>
+        
+        <!-- <div id="main">
             <button class="openbtn" onclick="openNav()">></button> 
-          </div>
+        </div> -->
+
+        <!-- spinner -->
         <div
           class="spinner-border text-secondary spinnerHidden"
           role="status"
         ></div>
 
-        <div class="row align-items-start">
+        <!-- content -->
+        <div class="align-items-start d-flex inforContainer">
+          <!-- side bar -->
           <div
             id="sideContainer"
-            class="col-3 btn-group-vertical sideButton"
+            class="btn-group-vertical sideButton"
           >
-          
+          </div>
+          <!-- information -->
+          <div id="contentContainer" class="nav">
+            </div>
         </div>
-          
-          
-          <div id="contentContainer" class="col-9 nav">
-            
-        </div>
-      </div>
     </div>
+
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

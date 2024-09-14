@@ -1,146 +1,94 @@
-.sideButton {
-  border-bottom: rgb(200, 200, 200) solid 1px;
-  margin-top: 30px;
-  padding: 10px;
-  align-content: flex-start;
-}
-
-#mainContainer {
-  background-color: white;
-}
-
-#topBar {
-  background-color: #fbfcf0;
-}
-
-.nav a:hover {
-  color: black;
-}
-
-.nav a:active {
-  color: black;
-}
-
-#bookMarkButton {
-  margin-right: 10%;
-}
-.nav a:visited {
-  color: rgb(147, 147, 147);
-}
-
 #body {
   height: auto;
-  margin-top: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-bottom: 50px;
   border: rgb(197, 197, 197) solid 1px;
+  padding-left: 0;
+  padding-right: 0;
   border-radius: 10px;
-  /*background: rgb(251, 252, 240);*/
-  /* background-color: #fbfcf0; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* nav */
+#logo {
+  max-width: 150px;
 }
 #topNav {
-  display: inline;
+  background-color: rgb(251, 255, 238);
+}
+#searchText {
+  width: 300px;
+  padding: 8px;
+  border-radius: 30px;
+  border: 1px solid rgb(153, 153, 153);
+  padding-left: 5%;
+}
+#searchButton {
+  border-radius: 30px;
+  width: 100px;
+  padding: 8px;
+  border: white;
+  background-color: rgb(126, 156, 65);
+  color: white;
+}
+.categoryButton {
+  border-radius: 50%;
+  border: white;
+  color: black;
+  background-color: white;
+}
+.imageCategory {
+  width: 60px;
 }
 
-/* #sideContainer {
-  background-color: #fbfcf0;
-} */
-
+/* sidebar */
+#sideContainer {
+  max-width: 250px;
+}
+.sideButton {
+  border-bottom: rgb(200, 200, 200) solid 1px;
+  margin-top: 10px;
+  padding: 10px;
+}
 .sideBarIcon {
   max-width: 100%;
 }
-
 .resultNumber {
   background-color: rgb(208, 208, 208);
   width: 300px;
   padding: 1cap;
   border: 1px rgb(187, 187, 187) solid;
   box-shadow: rgb(165, 165, 165) 1px 1px;
-  position: absolute;
+  /* position: absolute; */
   color: rgb(67, 67, 67);
 }
 
-#searchText {
-  width: 30pc;
-  height: 2.5pc;
-  border-radius: 30px;
-  border: white;
-  background-color: white;
-  margin-left: 10%;
-  position: relative;
-}
-
-#searchButton {
-  border-radius: 30px;
-  height: 2.6pc;
-  width: 9pc;
-  margin-top: -20px;
-  margin-left: -5%;
-  padding-left: 0px;
-  border: white;
-  background-color: rgb(126, 156, 65);
-  color: white;
-  position: absolute;
-}
-
-#logo {
-  max-width: 60%;
-  max-height: 30%;
-  margin-left: 20%;
-}
-
-.categoryButton {
-  /* background-color: #fbfcf0; */
-  background-color: white;
-  border-radius: 50%;
-  padding: 20px;
-  margin-left: 60px;
-  margin-bottom: -40px;
-  margin-top: 0px;
-  border: white;
-  color: black;
-}
-
-.imageCategory {
-  width: 40px;
-  border-radius: 50%;
-}
-
-.marginBottom {
-  border-top: rgb(194, 194, 193) solid 1px;
-  margin-bottom: 60px;
-  margin-top: -30px;
-  border-radius: 0px;
-}
-
-.card {
-  margin-bottom: 50px;
-  margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.table {
-  max-width: 300px;
-}
-
+/* spinner */
 .spinnerHidden {
   visibility: hidden;
 }
-
 .spinner-border {
   margin-left: 130px;
   margin-top: 120px;
   position: absolute;
 }
 
-.img-thumbnail {
-  max-width: 500px;
-  margin-bottom: 20px;
-}
-
+/* tab */
 #allTab {
   margin-bottom: 30px;
 }
+.nav a:active {
+  color: black;
+}
+.nav a:visited {
+  color: rgb(147, 147, 147);
+}
+.table {
+  max-width: 300px;
+}
 
+/* content */
 .img-big {
   max-width: 80%;
   border: 1px solid rgb(183, 183, 183);
@@ -148,11 +96,6 @@
   margin-top: 30px;
   margin-left: 50px;
 }
-
-#bookMarkButton {
-  max-width: fit-content;
-}
-
 .incomeForm {
   margin-left: 100px;
   margin-top: 30px;
@@ -160,306 +103,101 @@
   max-width: 300px;
 }
 
-@media (min-width: 1200px) and (max-width: 1400px), (min-width: 1400px) {
-  .categoryButton {
-    max-width: 13%;
-    font-size: 13px;
-  }
-  .imageCategory {
-    margin-bottom: 10px;
-  }
+/* .card {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+} */
 
+/* .img-thumbnail {
+  max-width: 500px;
+  margin-bottom: 20px;
+} */
+
+@media (min-width: 1200px) and (max-width: 1400px), (min-width: 1400px) {
   #allTab {
     margin-left: 100px;
   }
-
   #information {
     margin-left: 40px;
-  }
-
-  #main {
-    display: none;
   }
 }
 
 @media (max-width: 1200px) {
-  #categoryBar {
-    margin-left: 0px;
-    margin-top: 10px;
-    max-width: 100%;
-  }
-
-  .categoryButton {
-    max-width: 80px;
-    font-size: 12px;
-  }
-  .imageCategory {
-    margin-bottom: 10px;
-  }
-
-  #searchText {
-    max-width: 25pc;
-    margin-left: -2px;
-  }
-
   #allTab {
-    margin-left: 100px;
+    margin-left: 50px;
   }
-
   .resultNumber {
     width: 250px;
   }
   #information {
     margin-left: 40px;
   }
-
-  #main {
-    display: none;
-  }
 }
 
 @media (max-width: 992px) {
-  #categoryBar {
-    margin-left: 0px;
-    margin-top: 10px;
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-
-  .categoryButton {
-    margin-left: 0px;
-    max-width: 150px;
-    font-size: 12px;
-    display: inline-flexbox;
-    align-items: center;
-    margin: 12px;
-    padding: 20px;
-    padding-right: 0px;
-    margin-bottom: 0;
-  }
-
-  .imageCategory {
-    margin-bottom: 0px;
-    display: flexbox;
-  }
-
   #searchText {
-    max-width: 15pc;
-    margin-left: -2px;
+    max-width: 200px;
   }
-
-  #searchButton {
-    width: 7pc;
-    margin-left: -3%;
+  #sideContainer {
+    max-width: 200px;
   }
   #allTab {
     margin-left: 20px;
   }
-
   .resultNumber {
     width: 150px;
   }
   #information {
     margin-left: 0px;
   }
-  #main {
-    display: none;
-  }
 }
 
 @media (max-width: 768px) {
-  #categoryBar {
-    margin-left: 0px;
-    margin-top: 10px;
-    max-width: 100%;
+  #logo {
+    max-width: 100px;
   }
-
-  .categoryButton {
-    margin-left: 0px;
-    max-width: 150px;
-    font-size: 13px;
-    display: inline-flexbox;
-    align-items: center;
-    margin: 7px;
-    padding: 0px;
-    padding-right: 0px;
-  }
-
   .imageCategory {
-    margin-bottom: 0px;
-    display: flexbox;
-  }
-  #searchText {
-    max-width: 10pc;
-    margin-left: -2px;
-  }
-
-  #searchButton {
-    width: 5pc;
-    height: 2pc;
-    margin-left: -2%;
-    padding: 0;
-    margin-top: 0px;
-    background-color: rgb(143, 164, 123);
+    width: 40px;
   }
   #allTab {
     margin-left: 20px;
-    margin-top: 60px;
+    margin-top: 50px;
   }
-
-  .resultNumber {
-    width: 100px;
-    margin-top: -15px;
-  }
-
   #information {
     margin-left: 10px;
     width: 500px;
   }
-
-  .sideButton {
-    height: 50%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 10;
-    left: 0;
-    background-color: #c7c7c798; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  .inforContainer {
+    display: flex;
+    flex-direction: column;
   }
-  .sideButton a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #898989;
-    display: block;
-    transition: 0.3s;
+  #sideContainer {
+    max-width: 300px;
   }
-
-  .sideButton a:hover {
-    color: #3b3b3b;
-  }
-
-  .openbtn {
-    font-size: 15px;
-    cursor: pointer;
-    background-color: #c8c7c7b7;
-    color: white;
-    padding: 4px 10px;
-    border: rgb(169, 169, 169) solid 1px;
-    border-radius: 20%;
-    margin-top: 0px;
-    position: fixed;
-    float: left;
-  }
-
-  .openbtn:hover {
-    background-color: #444;
-  }
-
-  #main {
-    transition: margin-left 0.5s; /* If you want a transition effect */
-    padding: 20px;
-    display: block;
+  #information {
+    margin: 0;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 576px) {
-  #categoryBar {
-    margin-left: 0px;
-    margin-top: 10px;
-    max-width: 600px;
-  }
-
-  .categoryButton {
-    margin-left: 0px;
-    max-width: 150px;
-    font-size: 13px;
-    display: inline-flex;
-    align-items: center;
-    margin: 5px;
-    padding: 0px;
-    padding-right: 0px;
-  }
-
-  .imageCategory {
-    margin-bottom: 0px;
-    display: flexbox;
-  }
-
   #searchText {
-    max-width: 10pc;
-    margin-left: -2px;
+    max-width: 130px;
   }
-
   #searchButton {
-    width: 5pc;
-    height: 2pc;
-    margin-left: -2%;
-    padding: 0;
-    margin-top: 0px;
-    background-color: rgb(143, 164, 123);
+    width: 80px;
   }
   #allTab {
     margin-left: 30px;
     margin-top: 50px;
   }
-
-  .resultNumber {
-    width: 100px;
-    margin-top: -15px;
-  }
-
   #information {
-    margin-left: 25px;
-    width: 400px;
+    margin: 0;
+    max-width: 100%;
   }
-
-  .sideButton {
-    height: 50%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 10;
-    left: 0;
-    background-color: #c7c7c798; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-  }
-  .sideButton a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #898989;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .sideButton a:hover {
-    color: #3b3b3b;
-  }
-
-  .openbtn {
-    font-size: 15px;
-    cursor: pointer;
-    background-color: #c8c7c7b7;
-    color: white;
-    padding: 4px 10px;
-    border: rgb(169, 169, 169) solid 1px;
-    border-radius: 20%;
-    margin-left: -10px;
-  }
-
-  .openbtn:hover {
-    background-color: #444;
-  }
-
-  #main {
-    transition: margin-left 0.5s; /* If you want a transition effect */
-    padding: 20px;
-    display: block;
+  #contentContainer {
+    max-width: 100%;
   }
 }

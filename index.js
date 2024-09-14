@@ -1,36 +1,40 @@
+//DOM content area
 const contentArea = document.querySelector("#contentContainer");
 const navContainer = document.querySelector("#navContainer");
 const inforContainer = document.querySelector("#inforContainer");
+const resultNumber = document.querySelector("#resultList");
+const incomePerYear = document.querySelector("#incomePerYear");
+//DOM sidebar
 const sideBar = document.querySelector("#sideContainer");
-
 const sideButton = document.querySelector(".sideButton");
+//DOM tab
 const alltab = document.querySelector(".nav");
 const informationTab = document.querySelector("#informationTab");
 const complexityTab = document.querySelector("#complexityTab");
 const demandTab = document.querySelector("#demandTab");
 const incomeTab = document.querySelector("#incomeTab");
-
+//DOM categories
 const largeTreeCategory = document.querySelector("#largeTreeCategory");
 const smallTreeCategory = document.querySelector("#smallTreeCategory");
 const flowerCategory = document.querySelector("#flowerCategory");
 const vineCategory = document.querySelector("#vineCategory");
 const fastGrowPlantCategory = document.querySelector("#fastGrowPlantCategory");
-
+//DOM nav
 const searchForm = document.querySelector("#searchForm");
 const searchText = document.querySelector("#searchText");
-const spinnerSearch = document.querySelector(".spinner-border");
-const resultNumber = document.querySelector("#resultList");
-//const acre = document.querySelector("#acre");
-const incomePerYear = document.querySelector("#incomePerYear");
-let activeTarget = "";
 const submitForm = document.querySelector("#submitForm");
+//DOM spinner
+const spinnerSearch = document.querySelector(".spinner-border");
 
-const submitSearch = (event) => {
+let activeTarget = ""; //plant selected
+
+//search plant show sidebar
+const submitSearch = async (event) => {
   event.preventDefault();
-  const query = searchText.value;
-  sideBar.innerHTML = "";
+  const query = searchText.value; //input
+  sideBar.innerHTML = ""; //reset
 
-  fetch("./myfarm.json")
+  await fetch("./myfarm.json")
     .then((res) => {
       if (!res.ok) {
         throw new Error("Error");
@@ -40,7 +44,7 @@ const submitSearch = (event) => {
     .then((data) => {
       const { myfarm } = data;
       const plants = myfarm.plants;
-      let numberList = 0;
+      let numberList = 0; //search result number
       spinnerSearch.classList.remove("spinnerHidden");
 
       setTimeout(() => {
@@ -75,6 +79,7 @@ const submitSearch = (event) => {
     .catch((error) => console.error("Unable to fetch", error));
 };
 
+// click categories button show sidebar
 const sideBarFunc = (event) => {
   sideBar.innerHTML = "";
   spinnerSearch.classList.remove("spinnerHidden");
@@ -126,6 +131,7 @@ const sideBarFunc = (event) => {
     .catch((error) => console.error("Unable to fetch", error));
 };
 
+// click side bar button show tab and detail
 const sideButtonHandler = (event) => {
   contentArea.innerHTML = "";
   fetch("./myfarm.json")
@@ -211,6 +217,7 @@ const sideButtonHandler = (event) => {
     .catch((error) => console.error("Unable to fetch", error));
 };
 
+// click tab show content
 const tabHandler = (event) => {
   if (event.target.id == "incomeForm" || event.target.id == "acre") {
     incomeCalculate(event);
@@ -229,16 +236,20 @@ const tabHandler = (event) => {
       const plants = myfarm.plants;
       const target = event.delegateTarget.activeElement.name;
 
+      // clear active tab
       const toInactive = document.querySelector(".nav-link.active");
       if (toInactive) {
         toInactive.classList.remove("active");
       }
 
+      // active tab
       const toActive = event.target.closest(".nav-link");
       //const toActive = document.querySelector(`#${target}Tab`);
       if (toActive) {
         toActive.classList.add("active");
       }
+
+      //clear content
       const contentArea = document.querySelector("#information");
       contentArea.innerHTML = "";
 
@@ -246,18 +257,26 @@ const tabHandler = (event) => {
 
       plants.forEach((plant) => {
         if (plant.name == activeTarget) {
-          console.dir(event);
+          // console.dir(event);
+
+          // complexity tab
           if (target == "complexity") {
             newContent = `
         <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
           <div class="progress-bar" style="width: ${plant.complexity}%">${plant.complexity}%</div>
         </div>
         `;
-          } else if (target == "demand") {
+          }
+
+          // demand tab
+          else if (target == "demand") {
             newContent = `
             <img class="img-big" src="${plant.demandImage}" />
             `;
-          } else if (target == "income") {
+          }
+
+          //income tab
+          else if (target == "income") {
             newContent = `
             <div id="incomeForm" class="incomeForm mb-3">
               <label for="acre" class="col-form-label"
@@ -274,8 +293,10 @@ const tabHandler = (event) => {
             </p>
           </div>
             `;
-          } else {
-            //information
+          }
+
+          //information tab
+          else {
             newContent = `
             <div class="container" id="information">
             <p>
@@ -324,6 +345,7 @@ const tabHandler = (event) => {
     .catch((error) => console.error("Unable to fetch", error));
 };
 
+// calculate income
 const incomeCalculate = (event) => {
   const acreNumber = document.querySelector("#acre").value;
 
@@ -345,8 +367,6 @@ const incomeCalculate = (event) => {
           newIncomePerYear *= acreNumber;
           const newincome = document.querySelector("#incomePerYear");
           newincome.innerHTML = newIncomePerYear;
-          console.log(newIncomePerYear);
-          console.log(acreNumber);
         }
       });
     })
@@ -354,29 +374,30 @@ const incomeCalculate = (event) => {
     .catch((error) => console.error("Unable to fetch", error));
 };
 
+// handler click sidebar , tab
 sideButton.addEventListener("click", sideButtonHandler);
 alltab.addEventListener("click", tabHandler);
-
+// handler click categories
 flowerCategory.addEventListener("click", sideBarFunc);
 largeTreeCategory.addEventListener("click", sideBarFunc);
 vineCategory.addEventListener("click", sideBarFunc);
 fastGrowPlantCategory.addEventListener("click", sideBarFunc);
 smallTreeCategory.addEventListener("click", sideBarFunc);
-
+// handler submit search form
 searchForm.addEventListener("submit", submitSearch);
 
-function openNav() {
-  const sideBar = document.querySelector("#sideContainer");
-  const toggle = document.querySelector("#main");
+// function openNav() {
+//   const sideBar = document.querySelector("#sideContainer");
+//   const toggle = document.querySelector("#main");
 
-  if (sideBar.style.width == "250px") {
-    sideBar.style.width = "0px";
-    toggle.style.marginLeft = "0px";
-  } else if (sideBar.style.width == "0px") {
-    sideBar.style.width = "250px";
-    toggle.style.marginLeft = "250px";
-  } else if (sideBar.style.width == "") {
-    sideBar.style.width = "250px";
-    toggle.style.marginLeft = "250px";
-  }
-}
+//   if (sideBar.style.width == "250px") {
+//     sideBar.style.width = "0px";
+//     toggle.style.marginLeft = "0px";
+//   } else if (sideBar.style.width == "0px") {
+//     sideBar.style.width = "250px";
+//     toggle.style.marginLeft = "250px";
+//   } else if (sideBar.style.width == "") {
+//     sideBar.style.width = "250px";
+//     toggle.style.marginLeft = "250px";
+//   }
+// }
